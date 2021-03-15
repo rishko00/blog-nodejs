@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h2>{{ user.nickName }}</h2>
+    <h2>First name:{{ user.firstName }}</h2>
+    <h2>Last name:{{ user.lastName }}</h2>
+    <h2>Posts: </h2>
+    {{#each posts}}
+      <b>{{user.nickName}}</b><br>
+      <a href="/post/id={{this.id}}">{{this.title}}</a><br>
+      <p>{{this.text}}</p>
+      <p>{{this.date}}</p>
+      <img src="/uploads/{{this.image}}">
+      <p>likes: {{this.likes}}</p>
+    {{/each}}
+  </body>
+</html>

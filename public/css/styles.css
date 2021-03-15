@@ -1,0 +1,48 @@
+.navbar{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid lightgray;
+}
+
+.navchecked{
+  background-color: black;
+  color: white;
+}
+
+.currentuser{
+  display: flex;
+  font-size: 32px;
+}
+
+a, nav a{
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+nav a{
+  font-size: 32px;
+}
+
+.post{
+  border-bottom: 2px solid lightgray;
+}
+
+.post .title{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.post .image{
+  width: 600px;
+  height: 400px;
+}
+
+.post .text{
+ 
+}
+
+.post .date{
+  color: gray;
+}

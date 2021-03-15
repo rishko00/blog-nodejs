@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+    <p>{{user.nickName}}</p>
+    <p>{{post.date}}</p>
+    <form action="/addcomment/{{post.id}}" method="POST">
+      Text:<input type="text" name="text"><br>
+      <input type="submit" value="Add">
+    </form>
+    {{#each comments}}
+      <p>{{this.title}}</p>
+      <p>{{this.text}}</p>
+      <p>{{this.date}}</p>
+      <p>likes: {{this.likes}}</p>
+    {{/each}}
+  </body>
+</html>

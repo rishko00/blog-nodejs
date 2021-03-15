@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>My profile</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <a href="/main">Main</a>
+        <a href="/search">Search</a>
+        <a href="/myprofile" class="navchecked">My profile</a>
+      </nav>
+      <div class="currentuser">
+        <b class="nickname">{{ user.nickName }}</b> | 
+        <form action="/logout" class="logout" method="POST">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+    </div>
+
+    <h2>{{ user.nickName }}</h2>
+    <form action="/logout" method="POST">
+      <input type="submit" value="Logout">
+    </form>
+    <h1>Add post</h1>
+    <form action="/addpost/{{user.id}}" method="POST" enctype="multipart/form-data">
+      Title:<input type="text" name="title"><br>
+      Text:<input type="text" name="text"><br>
+      Image:<input type="file" name="filedata"><br>
+      <input type="submit" value="Add">
+    </form>
+    {{#each posts}}
+      <b>{{user.nickName}}</b><br>
+      <a href="/post/id={{this.id}}">{{this.title}}</a><br>
+      <p>{{this.text}}</p>
+      <p>{{this.date}}</p>
+      <p>likes: {{this.likes}}</p>
+    {{/each}}
+  </body>
+</html>

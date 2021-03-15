@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <a href="/main">Main</a>
+        <a href="/search" class="navchecked">Search</a>
+        <a href="/myprofile">My profile</a>
+      </nav>
+      <div class="currentuser">
+        <b class="nickname">{{ user.nickName }}</b> | 
+        <form action="/logout" class="logout" method="POST">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+    </div>
+
+    <form action="/search" method="POST">
+      Nickname:<input type="text" name="nickname"><br>
+      <input type="submit" value="Add">
+    </form>
+    {{#if findUser}}
+      <h2>{{ findUser.nickName }}</h2>
+      <h2>First name:{{ findUser.firstName }}</h2>
+      <h2>Last name:{{ findUser.lastName }}</h2>
+      <form action="/subscribe/{{findUser.id}}" method="POST">
+        <input type="submit" value="Subscribe">
+      </form>
+    {{/if}}
+  </body>
+</html>
